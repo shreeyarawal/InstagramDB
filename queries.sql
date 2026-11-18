@@ -26,7 +26,7 @@ JOIN Account_Types a
     ON u.account_type_id = a.account_type_id
 LEFT JOIN Posts p
     ON u.user_id = p.user_id
-WHERE u.user_id = 1
+WHERE a.account_type_name = 'Creator'
 ORDER BY p.created_at DESC, p.post_id DESC;
 
 
