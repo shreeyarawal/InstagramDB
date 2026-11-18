@@ -1,3 +1,4 @@
+USE InstagramDB;
 DROP VIEW IF EXISTS vw_MainFeed;
 
 CREATE VIEW vw_MainFeed AS
