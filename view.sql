@@ -2,7 +2,7 @@ DROP VIEW IF EXISTS vw_MainFeed;
 
 CREATE VIEW vw_MainFeed AS
 SELECT p.post_id, u.username, p.caption, p.created_at,
-    COUNT(DISTINCT l.like_id) AS TotalLikes,
+    COUNT(DISTINCT l.user_id) AS TotalLikes,
     COUNT(DISTINCT c.comment_id) AS TotalComments
 FROM Posts p
 JOIN Users u
