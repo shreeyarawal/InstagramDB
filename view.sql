@@ -8,9 +8,9 @@ SELECT p.post_id, u.username, p.caption, p.created_at,
 FROM Posts p
 JOIN Users u
     ON p.user_id = u.user_id
-LEFT JOIN likes l
+LEFT JOIN Likes l
     ON p.post_id = l.post_id
-LEFT JOIN comments c
+LEFT JOIN Comments c
     ON p.post_id = c.post_id
 GROUP BY p.post_id, u.username, p.caption, p.created_at; 
 
