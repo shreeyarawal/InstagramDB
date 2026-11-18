@@ -1,8 +1,7 @@
 
 USE InstagramDB;
 
--- QUERY 1: Instagram Feed
--- Display posts with usernames and categories
+
 SELECT
     p.post_id,
     u.username,
@@ -16,8 +15,6 @@ JOIN Categories c ON p.category_id = c.category_id
 ORDER BY p.created_at DESC, p.post_id DESC;
 
 
--- QUERY 2: User Profile
--- Display a user's posts and account information
 SELECT
     u.username,
     a.account_type_name,
@@ -33,8 +30,7 @@ WHERE u.user_id = 1
 ORDER BY p.created_at DESC, p.post_id DESC;
 
 
--- QUERY 3: Comments
--- Display comments with their authors
+
 SELECT
     p.post_id,
     p.caption,
@@ -48,8 +44,7 @@ WHERE p.post_id = 1
 ORDER BY c.created_at ASC, c.comment_id ASC;
 
 
--- QUERY 4: Likes
--- Display the number of likes for each post
+
 SELECT
     p.post_id,
     p.caption,
@@ -60,8 +55,6 @@ GROUP BY p.post_id, p.caption
 ORDER BY total_likes DESC, p.post_id ASC;
 
 
--- QUERY 5: Followers and Following
--- Display who follows whom
 SELECT
     follower.username AS follower_username,
     following_user.username AS following_username,
